@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
+	<style type="text/css">
+		body{
+			background: url(birthday.jpg);
+			background-size: cover;
+			height: 100vh;
+		}
+		.holder{
+			position: absolute;
+			top: 20%;
+		}
+		#wishes{
+			display: none;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="col-md-4 holder">
+		<!-- <img src="source.gif" class="img-fluid img"> -->
+		<audio src="music/birthday.mp3" autoplay></audio>
+		<!-- <iframe src="music/birthday.mp3" allow="autoplay" id="iframeAudio"> -->
+</iframe>
+
+<form  onsubmit="return happy()">
+	<input type="text" name="" id="name" class="form-control rounded-0 mb-2" placeholder="Enter Your Full Name">
+	<input type="text" name="" id="nick" class="form-control rounded-0 mb-2" placeholder="Enter Your Nice Name">
+	<button class="btn btn-info rounded-0 btn-block" id="btn">View Birthday Message</button>
+	<textarea id="wishes" rows="8" class="form-control mt-4" disabled=""></textarea>
+</form>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+// 	function happy(){
+// 	var name = document.getElementById("name").value;
+// 	var nick = document.getElementById("nick").value;
+
+// 	if ((name == "") && (nick == "")){
+// 		alert("Please fill the input fields");
+// 	}
+// 	else{
+	
+// 		alert(name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
+// 		document.getElementById("wishes").style.display = "block";
+// 	document.getElementById("wishes").value = name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick;
+// 	return false;
+		
+// 	}
+	
+
+// }
+$(function(){
+	
+	$("#btn").click(function(e){
+		// e.preventDefault();
+
+var name = $("#name").val();
+	var nick = $("#nick").val();
+	if ((name == "") && (nick == "")){
+		alert("Please fill the input fields");
+	}
+	else{
+	
+		alert(name + "," + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ "#"+ nick);
+		// $(".img").show()
+		// $("#wishes").show();
+	// $("#wishes").val( name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
+	// return false;
+		
+	}
+	// $("#wishes").val( name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
+	// $("#wishes").show();
+	// return false;
+	})
+})
+
+</script>
+<!-- <script type="text/javascript">
+	var songs = ["birthday.mp3"];
+	var song = new Audio();
+var currentSong = 0;
+
+window.onload = loadSong;
+
+function loadSong () {
+	song.src = "music/" + songs[currentSong];
+	// songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
+	// nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
+	// song.playbackRate = 1;	song.volume = volumeSlider.value;	
+	song.play();
+	// setTimeout(showDuration, 1000);
+}
+</script> -->
