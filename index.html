@@ -4,98 +4,112 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 	<style type="text/css">
+	body{
+		background: url(birthday.jpg);
+		background-size: cover;
+		height: 100vh;
+		background-color: rgba(0,0,0,0.5);
+		background-blend-mode: overlay;
+		font-family: 'Raleway', sans-serif;
+	}
+	.holder{
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -30%);
+	}
+	p {
+		color: white !important;
+	}
+	 .typed-cursor{
+	 	display: none;
+	 }
+	blockquote{
+		color: #fff;
+		padding-left: 22px;
+		text-align: center;
+		padding-top: 10px;
+	}
+	blockquote:before {
+    display: block;
+    padding-left:;
+    content: "\201C";
+    font-size: 40px;
+    position: absolute;
+    left: 18px;
+    top: 20%;
+    color: #fff;
+}
+	@media(max-width: 576px){
 		body{
-			background: url(birthday.jpg);
-			background-size: cover;
-			height: 100vh;
+			background-position: center;
+			background-size: 100% 100%;
+			background-color: rgba(0,0,0,0.5);
+			background-blend-mode: overlay;
 		}
-		.holder{
-			position: absolute;
-			top: 20%;
-		}
-		#wishes{
-			display: none;
-		}
-		
-	</style>
+	}
+	.letter{
+		position: relative;
+	}
+	#typed{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60%;
+		text-align: center;
+	}
+	.footer{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		font-size: 13px;
+		text-align: center;
+
+	}
+	.img{
+		width: 200px;
+		height: 200px;
+	}
+</style>
 </head>
 <body>
-	<div class="col-md-4 holder">
-		<!-- <img src="source.gif" class="img-fluid img"> -->
-		<audio src="music/birthday.mp3" autoplay></audio>
-		<!-- <iframe src="music/birthday.mp3" allow="autoplay" id="iframeAudio"> -->
-</iframe>
-
-<form  onsubmit="return happy()">
-	<input type="text" name="" id="name" class="form-control rounded-0 mb-2" placeholder="Enter Your Full Name">
-	<input type="text" name="" id="nick" class="form-control rounded-0 mb-2" placeholder="Enter Your Nice Name">
-	<button class="btn btn-info rounded-0 btn-block" id="btn">View Birthday Message</button>
-	<textarea id="wishes" rows="8" class="form-control mt-4" disabled=""></textarea>
-</form>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 holder">
+				<audio src="music/birthday.mp3" autoplay loop></audio>
+				<img src="picture1.jpg" class="rounded-circle img-thumbnail img d-block mx-auto">
+				<div class="letter">
+					<h5 class="text-white mt-4">Dear <span class="font-weight-bold">Lawal Abimbola,</span></h5>
+					<p class="text-center"><blockquote>I am sending you hugs, love, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!</blockquote></p>
+					<div id="typed-strings">
+						<p class="text-white">Happy birthday <strong>Prowebs</strong>.</p>
+						<p class="text-white">The Ada of our time.</p>
+						<p class="text-white">Lady Programmer.</p>
+						<p class="text-white">Digital Marketer.</p>
+						<p class="text-white">Wordpress Designer.</p>
+					</div>
+					<span id="typed" class="text-white"></span>
+				</div>
+			</div>
+			<p class="footer">Made with <i class="fas fa-heart" style="color: red"></i> from Font Awesome</p>
+		</div>
+	</div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript">
-// 	function happy(){
-// 	var name = document.getElementById("name").value;
-// 	var nick = document.getElementById("nick").value;
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
-// 	if ((name == "") && (nick == "")){
-// 		alert("Please fill the input fields");
-// 	}
-// 	else{
-	
-// 		alert(name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
-// 		document.getElementById("wishes").style.display = "block";
-// 	document.getElementById("wishes").value = name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick;
-// 	return false;
-		
-// 	}
-	
-
-// }
-$(function(){
-	
-	$("#btn").click(function(e){
-		// e.preventDefault();
-
-var name = $("#name").val();
-	var nick = $("#nick").val();
-	if ((name == "") && (nick == "")){
-		alert("Please fill the input fields");
-	}
-	else{
-	
-		alert(name + "," + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ "#"+ nick);
-		// $(".img").show()
-		// $("#wishes").show();
-	// $("#wishes").val( name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
-	// return false;
-		
-	}
-	// $("#wishes").val( name + " " + "I am sending you hugs, kisses, laughter, warm wishes, and many, many blessings. I hope your birthday is filled with all of the above and so much more. Wishing you a happy birthday!" +" "+ nick);
-	// $("#wishes").show();
-	// return false;
-	})
-})
-
+<script>
+	var typed = new Typed('#typed', {
+		stringsElement: '#typed-strings',
+		typeSpeed: 20,
+		backSpeed: 20,
+		backDelay: 500,
+		loop: true
+	});
 </script>
-<!-- <script type="text/javascript">
-	var songs = ["birthday.mp3"];
-	var song = new Audio();
-var currentSong = 0;
-
-window.onload = loadSong;
-
-function loadSong () {
-	song.src = "music/" + songs[currentSong];
-	// songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
-	// nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
-	// song.playbackRate = 1;	song.volume = volumeSlider.value;	
-	song.play();
-	// setTimeout(showDuration, 1000);
-}
-</script> -->
